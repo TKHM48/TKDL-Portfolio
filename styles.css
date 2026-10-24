@@ -1,0 +1,740 @@
+:root {
+  /* Font */
+  font-family: "poppins", sans-serif;
+  font-family: "montserrat", sans-serif;
+
+  /* Color */
+  --color-primary: rgb(255, 61, 0);
+  --color-accent: #2B2D42; /* dark blue */
+  --color-accent: #FDF8E4; /* cream */
+
+  color: #2962FF;
+  color: #EF4B24;
+
+  color: #F6F8E8;
+  color: #FDF4F2;
+  color: #F9F8F4;
+  color: #F8F6F0;
+  color: #e0e6e2;
+  color: black;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/* ==========================================================================
+   GLOBAL BASE (Mobile default for all pages)
+   ========================================================================== */
+body {
+      margin: 0 auto;
+      padding: 0;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      font-family: "montserrat", sans-serif;
+      font-size: 1rem;
+    }
+
+
+    /*===================================
+    Layout switcher
+    =========================== */
+
+    .container {
+      max-width: 90vw;
+      margin-inline: auto;
+      /* border: dotted yellow; */
+      padding-inline: 1em;
+      padding: 2em;
+    }
+
+    .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+  }
+
+    .two-column-div {
+      display: flex;
+      gap: 1em;
+      border: solid blue;
+      justify-content: space-around;
+    }
+
+
+
+    .orange-bg {
+      margin: 0 auto;
+      background-color: #EF4B24;
+      width: full-width;
+      height: auto;
+      padding: 2em;
+
+    }
+    .white-bg {
+      margin: 0 auto;
+      background-color: white;
+      width: full-width;
+      height: auto;
+    }
+
+    .cream-bg {
+      margin: 0 auto;
+      background-color: #FDF8E4;
+      width: full-width;
+      height: auto;
+    }
+
+
+    /* #FDF8E4 */
+
+    .light-grey-bg {
+      margin: 0 auto;
+      background-color: #F3F2EF;
+      width: full-width;
+      height: auto;
+    }
+
+
+
+
+
+    .gradient-box {
+      background-image: linear-gradient(to right, #ffe8f1, #FFEAE2, #FFFFFF);
+      padding: 2em;
+    }
+
+
+  /*  Navbar */
+  #navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      Z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center;
+      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 10px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+
+    .navlink {
+      margin: 0 auto;
+      display: flex;
+      list-style-type: none;
+      justify-content: flex-end;
+      gap: 30;
+      margin: 0;
+      padding: 0;
+      font-family: "montserrat", sans-serif;
+      text-transform: uppercase;
+
+    }
+
+    .navlink a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: 0.75em 1.25em;
+      transition: background-color 0.3s ease;
+    }
+
+    .navlink a:hover {
+      background-color: #ff3d00;;
+      color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Headings */
+    h1,
+    h2 {
+      font-family: "poppins", sans-serif;
+      font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
+
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: white;
+      width: 80%;
+      text-transform: uppercase;
+      line-height: 1.3;
+      /* border: solid; */
+    }
+
+    h2 {
+      color: rgb(255, 61, 0);
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin-left: 0;
+    }
+
+    h2.white {
+      color: white;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin: 0 auto;
+    }
+
+    p {
+      padding-bottom: 1em;
+    }
+
+    p.white {
+      color: white;
+    }
+
+    p,
+    nav,
+    .footer-menu,
+    .stack-wrapper {
+      font-family: "montserrat", sans-serif;
+    }
+
+  /* Hero Section */
+
+    .hero {
+      display: flex;
+      background-color: rgb(255, 61, 0);
+      height: 50vh;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      /* border: dotted white; */
+    }
+
+    .hero-description {
+      color: white;
+    }
+
+    .hero-img {
+      width: 250px;
+      height: auto;
+    }
+
+    /* Service */
+    .service {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .skill-tag {
+      color: #EF4B24;
+      background-color: white;
+      border: solid 0.5px #EF4B24;
+      border-radius: 10px;
+      padding: 0.5em;
+      align-self: flex-start;
+      height: auto;
+    }
+
+    .service-heading {
+    }
+
+
+    .bio {
+      display: flex;
+      flex-direction: column;
+      border: solid 1px rgb(255, 61, 0);
+      border-radius: 10px;
+    }
+
+    .icon {
+      color: rgb(255, 61, 0);
+      justify-content: center;
+    }
+
+    .icon-white {
+      color: white;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;;
+      gap: 0.5em;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      gap: 1em;
+      padding: 2em;
+      border: solid 1px rgb(255, 61, 0);
+    }
+
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      gap: 2.5em;
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .featured-work-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .featured-work-text {
+      margin: 0;
+      color: white;
+      display: flex;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 20px;
+      padding: 20px;
+      min-height: 22rem;
+    }
+
+    .featured-work-card {
+      margin: 0;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #F9F8F4;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 1em;
+      gap: 0.5em;
+      perspective: 1000px
+    }
+
+    .featured-work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .featured-work-card img {
+      width: 80%;
+
+    }
+
+    .featured-work-card h3 {
+      text-align: center;
+      color: rgb(255, 61, 0);
+    }
+
+    .featured-work-card-btn {
+      background-color: white;
+      color: rgb(255, 61, 0);
+      border: solid 0.5px rgb(255, 61, 0);
+      border-radius: 8px;
+      padding: 0.5em;
+      display: inline-block;
+      text-decoration: none;
+      color: rgb(255, 61, 0);
+    }
+
+    /* Card Flip*/
+
+    .card-flip {
+    perspective: 1000px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    }
+
+    .inner {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+
+    }
+
+    .card-flip:hover .inner {
+      transform: rotateY(180deg);
+    }
+
+    .face-front,
+    .face-back {
+      grid-area: 1 / 1;
+      width: 100%;
+      height: 100%;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75em;
+      text-align: center;
+      border-radius: 15px;
+      padding: 2em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .face-front {
+      background: #F9F8F4;
+    }
+
+    .face-front p,
+    .face-back p {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .face-front img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .face-back {
+      background: #293246;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+
+
+    .testimonial-card {
+      max-width: 50%;
+      border: solid 0.5px  #ff3d00;
+
+      padding: 1em;
+    }
+
+    /* Footer */
+    .footer {
+      margin: 0 auto;
+      color: white;
+      height: auto;
+      padding: 2em;
+    }
+
+    .footer-menu {
+      display: flex;
+      list-style-type: none;
+      margin: 0.75em;
+      gap: 1em;
+    }
+
+
+
+/* =================================
+Mobile - Website Redesigning
+====================================*/
+
+  .hero {
+    height: auto;
+  }
+
+  .vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .orange-text {
+    color: #ff3d00;
+    font-weight: semi-bold;
+  }
+
+  .img-size {
+    width: 100%;
+    padding: 1.5em;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+
+/* =================================
+
+  Home Desktop
+
+====================================*/
+
+@media (min-width: 768px){
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      font-family: "montserrat", sans-serif;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin-inline: auto;
+      /* border: dotted yellow; */
+      padding-inline: 1em;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .orange-bg {
+      margin: 0 auto;
+      background-color: rgb(255, 61, 0);
+      width: full-width;
+      height: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      Z-index: 1000;
+      background-color: #FFFFFFCC;
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      margin: 0 auto;
+      display: flex;
+      list-style-type: none;
+      height: auto;
+      justify-content: flex-end;
+      gap: 0;
+      font-family: "montserrat", sans-serif;
+    }
+
+    h1,
+    h2 {
+      font-family: "poppins", sans-serif;
+    }
+
+    h1 {
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    h2 {
+      color: rgb(255, 61, 0);
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    p,
+    nav,
+    .footer-menu,
+    .stack-wrapper {
+      font-family: "montserrat", sans-serif;
+    }
+
+    .hero {
+      display: flex;
+      background-color: rgb(255, 61, 0);
+      height: 60vh;
+      align-items: center;
+      padding: 2em;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      /* border: dotted white; */
+    }
+
+    .hero-description {
+      color: white;
+    }
+
+
+
+    .profile-img {
+      max-width: 30%;
+      /* border: solid pink; */
+    }
+
+
+
+    .skill {
+      width: fit-content;
+      background-color: white;
+      color: rgb(255, 61, 0);
+      border: solid 0.5px  rgb(255, 61, 0);
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+
+
+    .service-heading {
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+
+    .stack {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: start;
+      list-style-type: none;
+      gap: 2.5em;
+      /* border: solid #ff3d00; */
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .featured-work-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .featured-work-text {
+      margin: 0;
+      color: white;
+      display: flex;
+    }
+
+
+
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 20px;
+      padding: 20px;
+      min-height: 22rem;
+    }
+
+
+
+    /* Card Flip*/
+
+
+
+    /* Footer */
+    .footer {
+      margin: 0 auto;
+      color: white;
+      height: auto;
+      padding: 2em;
+    }
+
+    .footer-menu {
+      list-style-type: none;
+      margin: 0.75em;
+    }
+
+
+/* =================================
+Desktop - Website Redesigning
+====================================*/
+
+  @media (min-width: 768px){
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      gap: 3em;
+      padding: 2em;
+      border: solid 1px rgb(255, 61, 0);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .two-column-div {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+
+    .orange-text {
+      color: #ff3d00;
+      font-weight: bold;
+    }
+
+    .text-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8em;
+  }
+  }
+
+
+
+
+}
+
+.card-flip .face-front img {
+  max-height: none;
+}
+
+.card-large-icon .face-front img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}

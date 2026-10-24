@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Redesigning Project</title>
+    <link rel="stylesheet" href="../styles.css" />
+
+    <!-- Font -->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+<body>
+   <!-- Navbar -->
+  <header id="navbar">
+    <div class="container">
+      <a href="/index.html"><img src="/images/logo.png"></a>
+      <ul class="navlink">
+            <li><a href="pages/about.html">about</a></li>
+            <li><li><a href="pages/redesign-project.html">work</a></li>
+            <li><a href="#">contact</a></li>
+      </ul>
+    </div>
+  </header>
+    <!-- </header> -->
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-text vertical-stack">
+          <h1>Website Redesign Project</h1>
+
+          <p class="hero-description">
+            This is a website redesigning project where I aim to improve UX/UI and content.
+          </p>
+        </div>
+        <img src="../images/projects/redesign-white.png"/>
+      </div>
+    </section>
+
+    <!-- Overview -->
+      <div class="text-container container">
+          <h2>Overview</h2>
+          <p>Get Your Guide is an online travel agency(OTA),
+            often called an aggregator site, lists thousands of tour packages,
+             hotel and transportation listings by private vendors from all over the world. The business model of this type of site is algorithms.
+          </p>
+      </div>
+
+    <!-- Problem -->
+    <div class="white-bg">
+      <div class="text-container container">
+          <h2>Problem</h2>
+
+              <ul class="orange-text">
+                <li>The content lacks cultural flavor and design is generic. </li>
+                <li>The content is not personalized to Japanese users.</li>
+                <li>Literal translation that sounds robotic.</li>
+              </ul>
+
+
+      </div>
+    </div>
+
+  <!-- Audit findings -->
+      <div class="container">
+          <h2>Audit findings: Linguistic and UX problems</h2>
+
+            <div>
+            <img class = "img-size" src="../images/projects/get-your-guide/gyg-home.jpg">
+
+            <p><span class="orange-text">Language:</span> The texts and copy on the Japanese pages sound like
+              they were auto translated and lack cultural flavor.
+              Looking at English pages, I also got a sense that they are not very thought out to begin with.
+            </p>
+
+            <p>
+              <span class="orange-text">UX/UI:</span>
+              It looks like the cards (countries, landmarks, destinations, etc. on the top page) are randomly selected (or the same in other markets).  The content (graphics and copy) looks generic and is not perfectly personalized to Japanese users.
+            </p>
+          </div>
+
+            <div>
+              <p>Looking at how the content is laid out,
+                it seems the cards are laid out the same way as some of the other locals.
+                Rome, Paris, Amsterdam, etc.
+              </p>
+
+              <h3 class="orange-text">Navbar (Popup)</h3>
+              <img class="img-size" src="../images/projects/get-your-guide/navbar-popup.jpg">
+
+              <p>
+                The nav menu 見どころ(highlight) and やるべきこと(Things to do) all sound literal
+                translation of English. Not only that, if you hover over the 見どころ, you’ll see a popup with so many options.
+              </p>
+
+              <p>
+                On the left side are the regions of the world. On the right, you see destinations from all over the world listed.
+              </p>
+
+              <p>
+                From copywriting standpoint, 見どころ(highlight) sounds like “popular places to visit”
+                which are listed on the right with popular landmarks all over the world mixed in an unorganized way.
+              </p>
+              <p>
+                It would make logical sense to let users choose a region or country first,
+                then city and finally a destination. But the way it is laid out, you are bombarded with so much information with no hierarchy.
+              </p>
+
+              <p>
+                The regions of the world listed on the left are not “places to visit.”
+                The options available in this popup are not very focused and can leave the visitors’ attention divided.
+              </p>
+
+
+
+              <h3 class="orange-text">Product Cards</h3>
+              <img class = "img-size" src="../images/projects/get-your-guide/popular-spots.jpg">
+              <p>
+               On the Home page, you see a random collection of cards - popular activities or places to visit - from left to right: Morocco, Italy, London, Spain, Egypt to Tokyo.
+              </p>
+            </div>
+      </div>
+
+
+  <!-- Solution -->
+    <div class="gradient-box">
+      <div class="text-container container">
+          <h2 class="orange">Solution</h2>
+          <p>Some of the most popular countries to visit among Japanese tourists include South Korea, China, Taiwan and Thailand. They are all Asian countries so it makes sense to create a section for Asia.
+Other popular western cities/countries include Los Angeles, Paris, Sydney, London and New York.
+          </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <section class="footer orange-bg">
+      <div class="container">
+        <ul class="footer-menu">
+          <li>about</li>
+          <li>service</li>
+          <li>contact</li>
+        </ul>
+      </div>
+    </section>
+
+
+  <script src="dcript.js" defer></script>
+
+</body>
+</html>
