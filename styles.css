@@ -223,7 +223,7 @@ body {
     .hero {
       display: flex;
       background-color: rgb(255, 61, 0);
-      height: 50vh;
+      height: 80vh;
       align-items: center;
       justify-content: center;
       padding: 2em;
