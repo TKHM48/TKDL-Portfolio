@@ -18,6 +18,10 @@
     <!-- Icons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+
+
+
+
     <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,9 +39,9 @@
   <!-- Navbar -->
   <header id="navbar">
     <div class="container">
-      <a href="./index.html"><img src="./images/logo.png"></a>
+      <a href="/index.html"><img src="/images/logo.png"></a>
       <ul class="navlink">
-            <li><a href="./pages/redesign-project.html">about</a></li>
+            <li><a href="pages/redesign-project.html">about</a></li>
             <li><a href="pages/redesign-project.html">work</a></li>
             <li><a href="#">contact</a></li>
       </ul>
@@ -47,35 +51,19 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container flex-container">
+      <div class="container hero-container">
         <div class="hero-text vertical-stack">
           <h1>Bridging the cultural gap at the intersection of
              design, content and development</h1>
 
           <p class="hero-description">
             I am a Japanese localization expert, designer and frontend developer
-            who aims to simplify the localization process.
+            who aims to create a great user experience and simplify the localization process along the way.
           </p>
         </div>
         <!-- <img class="hero-img" src="/images/projects/get-your-guide/gap_lines_white.png"/> -->
       </div>
     </section>
-
-    <!-- Service -->
-<section >
-    <div class="container text-container">
-        <h2 class="service-heading">What I do</h2>
-
-        <div class="service">
-          <button class="skill-tag">UX Writing</button>
-          <button class="skill-tag">Copy adaptation</button>
-          <button class="skill-tag">Translation</button>
-          <button class="skill-tag">Copywriting</button>
-          <button class="skill-tag">UI Design</button>
-        </ul>
-    </div>
-
-  </section>
 
     <!-- Bio -->
     <section class="white-bg">
@@ -122,6 +110,43 @@
       </div>
     </section>
 
+    <!-- Service -->
+<section >
+    <div class="container text-container">
+      <h2 class="service-heading">What I do</h2>
+<!--
+  <ul class="skill-tag">
+    <li>UX Writing</li>
+    <li>Copy adaptation</li>
+    <li>Translation</li>
+    <li>Copywriting</li>
+    <li>UI Design</li>
+  </ul>
+  -->
+
+
+  <div class="container">
+    <!-- Action Buttons -->
+    <div class="button-group skill-tag">
+      <button id="btnA">UX Writing</button>
+      <button id="btnB">Content Strategy</button>
+      <button id="btnC">Creative Translation</button>
+      <button id="btnD">UI Design</button>
+      <button id="btnE">Copywriting</button>
+    </div>
+
+    <!-- Dynamic Description Display Area -->
+
+      <p class="skill-description" id="descriptionDisplay">
+        The Japanese language has various layers of formalities and informalities
+        unlike English. Depending on the situations, you need to be formal, informal or somewhere between. Just translate English texts on the CTA button and you might see a funny face on Japanese users visiting your site.
+      </p>
+  </div>
+
+
+
+</div>
+</section>
 
 
     <!-- Featured Work -->
@@ -217,5 +242,6 @@
         </ul>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
