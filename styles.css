@@ -655,7 +655,7 @@ Mobile - Website Redesigning
       flex-direction: column;
       max-width: 70%;
 
-      border: dotted white;
+      /* border: dotted white; */
     }
 
     .hero-description {
@@ -772,7 +772,7 @@ Desktop - Website Redesigning
     .hero-container {
       display: flex;
       flex-direction: row;
-      border: solid 1px skyblue;
+      /* border: solid 1px skyblue; */
       margin-bottom: 2em;
     }
 
