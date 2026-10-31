@@ -66,7 +66,7 @@ body {
     .two-column-div {
       display: flex;
       gap: 1em;
-      border: solid blue;
+      /* border: solid blue; */
       justify-content: space-around;
     }
 
@@ -239,7 +239,7 @@ body {
       flex-direction: column;
       max-width: 100%;
 
-      border: dotted white;
+     /* border: dotted white; */
     }
 
     .hero-description {
