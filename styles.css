@@ -7,6 +7,7 @@
   --color-primary: rgb(255, 61, 0);
   --color-accent: #2B2D42; /* dark blue */
   --color-accent: #FDF8E4; /* cream */
+  --color-accent: #FFE4CF; /* pale light orange */
 
   color: #2962FF;
   color: #EF4B24;
@@ -58,10 +59,9 @@ body {
 
     .text-container {
     display: flex;
-    flex-direction: column;
     gap: 2em;
     align-items: center;
-  }
+    }
 
     .two-column-div {
       display: flex;
@@ -223,22 +223,23 @@ body {
     .hero {
       display: flex;
       background-color: rgb(255, 61, 0);
-      height: 80vh;
+      height: auto;
       align-items: center;
       justify-content: center;
-      padding: 2em;
+
     }
 
     .hero-container {
       display: flex;
-      flex-direction: column;
+      padding: 2em;
     }
 
     .hero-text {
       display: flex;
       flex-direction: column;
-      width: 90%;
-      /* border: dotted white; */
+      max-width: 100%;
+
+      border: dotted white;
     }
 
     .hero-description {
@@ -250,7 +251,7 @@ body {
       height: auto;
     }
 
-    /* Service */
+    /* Service (What I do) */
     .service {
       display: flex;
       flex-wrap: wrap;
@@ -258,18 +259,43 @@ body {
     }
 
     .skill-tag {
+      display: flex;
+      flex-wrap: wrap;
+      align-self: flex-start;
+      height: auto;
+      list-style-type: none;
+      gap: 10px;
+    }
+
+    .skill-tag > button {
       color: #EF4B24;
       background-color: white;
       border: solid 0.5px #EF4B24;
       border-radius: 10px;
       padding: 0.5em;
-      align-self: flex-start;
-      height: auto;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-heading {
+    .button-group {
+      /* border: solid 1px red; */
+      padding-left: 0;
+      display: flex;
+      font-size: inherit;
     }
 
+
+    .skill-tag > button:hover,
+    .skill-tag > button.active {
+      background-color: #ff3d00;
+      color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-description {
+      padding-top: 1em;
+      /* border: solid 1px red; */
+    }
 
     .bio {
       display: flex;
@@ -301,6 +327,7 @@ body {
       gap: 1em;
       padding: 2em;
       border: solid 1px rgb(255, 61, 0);
+
     }
 
 
@@ -450,6 +477,37 @@ body {
       padding: 1em;
     }
 
+
+/*==================================
+
+  Bento grid
+
+=================================*/
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-areas: "Gastronomy" "Outdoor" "Art" "Shopping";
+}
+
+.block1 {
+  grid-area: Gastrnomy;
+}
+
+.block2 {
+  grid-area: Outdoor;
+}
+
+.block3 {
+  grid-area: Art;
+}
+
+.block4 {
+  grid-area: Shopping;
+}
+
+
+
     /* Footer */
     .footer {
       margin: 0 auto;
@@ -581,23 +639,33 @@ Mobile - Website Redesigning
     .hero {
       display: flex;
       background-color: rgb(255, 61, 0);
-      height: 60vh;
+      height: auto;
       align-items: center;
+      justify-content: center;
+
+    }
+
+    .hero-container {
+      display: flex;
       padding: 2em;
     }
 
     .hero-text {
       display: flex;
       flex-direction: column;
-      width: 70%;
-      /* border: dotted white; */
+      max-width: 70%;
+
+      border: dotted white;
     }
 
     .hero-description {
       color: white;
     }
 
-
+    .hero-img {
+      width: 250px;
+      height: auto;
+    }
 
     .profile-img {
       max-width: 30%;
@@ -704,6 +772,8 @@ Desktop - Website Redesigning
     .hero-container {
       display: flex;
       flex-direction: row;
+      border: solid 1px skyblue;
+      margin-bottom: 2em;
     }
 
     .two-column-div {
@@ -721,7 +791,7 @@ Desktop - Website Redesigning
     display: flex;
     flex-direction: row;
     gap: 8em;
-  }
+    }
   }
 
 
