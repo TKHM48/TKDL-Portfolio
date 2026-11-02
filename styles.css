@@ -41,7 +41,6 @@ body {
       font-size: 1.25rem;
       line-height: 1.3;
       font-family: "montserrat", sans-serif;
-      font-size: 1rem;
     }
 
 
@@ -66,7 +65,7 @@ body {
     .two-column-div {
       display: flex;
       gap: 1em;
-      /* border: solid blue; */
+      border: solid blue;
       justify-content: space-around;
     }
 
@@ -103,10 +102,6 @@ body {
       width: full-width;
       height: auto;
     }
-
-
-
-
 
     .gradient-box {
       background-image: linear-gradient(to right, #ffe8f1, #FFEAE2, #FFFFFF);
@@ -205,6 +200,7 @@ body {
 
     p {
       padding-bottom: 1em;
+      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     }
 
     p.white {
@@ -216,6 +212,13 @@ body {
     .footer-menu,
     .stack-wrapper {
       font-family: "montserrat", sans-serif;
+    }
+
+    button,
+      input,
+      select,
+      textarea {
+        font: inherit;
     }
 
   /* Hero Section */
@@ -238,8 +241,6 @@ body {
       display: flex;
       flex-direction: column;
       max-width: 100%;
-
-     /* border: dotted white; */
     }
 
     .hero-description {
@@ -325,7 +326,7 @@ body {
       flex-direction: column;
       height: auto;
       gap: 1em;
-      padding: 2em;
+      padding: 1em;
       border: solid 1px rgb(255, 61, 0);
 
     }
@@ -647,7 +648,7 @@ Mobile - Website Redesigning
 
     .hero-container {
       display: flex;
-      padding: 2em;
+      padding: 1em;
     }
 
     .hero-text {
@@ -655,7 +656,6 @@ Mobile - Website Redesigning
       flex-direction: column;
       max-width: 70%;
 
-      /* border: dotted white; */
     }
 
     .hero-description {
@@ -791,11 +791,8 @@ Desktop - Website Redesigning
     display: flex;
     flex-direction: row;
     gap: 8em;
-    }
   }
-
-
-
+  }
 
 }
 
