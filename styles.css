@@ -369,6 +369,13 @@ body {
       flex-direction: column;
       border: solid 1px rgb(255, 61, 0);
       border-radius: 10px;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
     }
 
     .icon {
@@ -394,7 +401,6 @@ body {
       gap: 1em;
       padding: 1em;
       border: solid 1px rgb(255, 61, 0);
-
     }
 
 
@@ -723,27 +729,7 @@ Mobile - Website Redesigning
     display: flex;
     flex-direction: row;
     gap: 8em;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     h1,
@@ -786,8 +772,17 @@ Mobile - Website Redesigning
 
     }
 
+      .flex-container {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      gap: 1em;
+      padding: 1em;
+      border: solid 1px rgb(255, 61, 0);
+    }
+
+
     .profile-img {
-      max-width: 30%;
       /* border: solid pink; */
     }
 
