@@ -69,8 +69,6 @@ body {
       justify-content: space-around;
     }
 
-
-
     .orange-bg {
       margin: 0 auto;
       background-color: #EF4B24;
@@ -109,8 +107,11 @@ body {
     }
 
 
-  /*  Navbar */
-  #navbar {
+  /*  ===============================
+      Navbar
+   =============================== */
+
+      #navbar {
       position: sticky;
       top: 0;
       width: 100%;
@@ -133,22 +134,38 @@ body {
       align-items: center;
       display: flex;
       justify-content: space-between;
-
     }
 
+
+    .site-header {
+      display: flex;
+      justify-content: flex-end; /* pushes .menu to the far right */
+    }
+
+/* Menu links: hidden by default, revealed when checked */
 
     .navlink {
-      margin: 0 auto;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: auto;
+      width: max-content;
       display: flex;
+      flex-direction: column;
       list-style-type: none;
+      align-items: stretch;
+      text-align: left;
       justify-content: flex-end;
-      gap: 30;
+      gap: 0;
       margin: 0;
       padding: 0;
+      max-height: 0;
       font-family: "montserrat", sans-serif;
       text-transform: uppercase;
-
+      overflow: hidden;
+      transition: max-height 0.3s ease;
     }
+
 
     .navlink a {
       display: block;
@@ -163,6 +180,59 @@ body {
       color: white;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      color: rgb(255, 61, 0);
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .hamburger span {
+      height: 3px;
+      background: rgb(255, 61, 0);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+
+    /* Animate the three bars into an X */
+    #menu-toggle:checked + .hamburger span:nth-child(1) {
+      transform: translateY(9.5px) rotate(45deg);
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(3) {
+      transform: translateY(-9.5px) rotate(-45deg);
+    }
+
+
+
+    #menu-toggle:checked ~ .navlink {
+      max-height: 200px;
+      background-color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .links a {
+      display: block;
+      padding: 10px 0;
+      color: #222;
+      text-decoration: none;
+    }
+
+
 
     /* Headings */
     h1,
@@ -591,25 +661,90 @@ Mobile - Website Redesigning
       height: auto;
     }
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      Z-index: 1000;
-      background-color: #FFFFFFCC;
 
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+  /*===============================================
+    Nav Menu (Desktop)
+  =============================================*/
+
+    .hamburger {
+      display: none;
     }
 
-    .nav {
-      margin: 0 auto;
+    .hero {
       display: flex;
-      list-style-type: none;
-      height: auto;
-      justify-content: flex-end;
-      gap: 0;
-      font-family: "montserrat", sans-serif;
+      flex-direction: row;
     }
+
+    .menu {
+      flex-direction: row;
+    }
+
+    .navlink,
+    #menu-toggle:checked ~ .navlink {
+      position: static;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+      max-height: none;
+      overflow: visible;
+      margin: 0;
+      background: none;
+      box-shadow: none;
+    }
+
+    .navlink a {
+      padding: 1em 1.25em;
+    }
+
+
+    /* ==============================
+      Hero (Desktop)
+    ==============================*/
+
+    .hero-container {
+      display: flex;
+      flex-direction: row;
+      /* border: solid 1px skyblue; */
+      margin-bottom: 2em;
+    }
+
+    .two-column-div {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+
+    .orange-text {
+      color: #ff3d00;
+      font-weight: bold;
+    }
+
+    .text-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8em;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     h1,
     h2 {
@@ -730,7 +865,6 @@ Mobile - Website Redesigning
 Desktop - Website Redesigning
 ====================================*/
 
-  @media (min-width: 768px){
 
     .flex-container {
       display: flex;
@@ -741,47 +875,17 @@ Desktop - Website Redesigning
       border: solid 1px rgb(255, 61, 0);
     }
 
-    .hero {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .hero-container {
-      display: flex;
-      flex-direction: row;
-      /* border: solid 1px skyblue; */
-      margin-bottom: 2em;
-    }
-
-    .two-column-div {
-      display: flex;
-      flex-direction: row;
-      gap: 2em;
-    }
-
-    .orange-text {
-      color: #ff3d00;
-      font-weight: bold;
-    }
-
-    .text-container {
-    display: flex;
-    flex-direction: row;
-    gap: 8em;
-  }
-  }
 
 
-
-
-}
-
-.card-flip .face-front img {
+  .card-flip .face-front img {
   max-height: none;
-}
+  }
 
-.card-large-icon .face-front img {
+  .card-large-icon .face-front img {
   width: 180px;
   max-width: 100%;
   height: auto;
+  }
+
+
 }
