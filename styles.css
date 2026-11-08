@@ -29,8 +29,22 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  /* Scales base text smoothly from 16px to 20px based on screen width */
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+
+  @view-transition {
+  navigation: auto;
   }
+
+  ::view-transition-group(root) {
+    animation-duration: 1s;
+  }
+}
+
+h1 {
+  /* Scales large headings smoothly from 32px to 56px */
+  font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+}
 
 /* ==========================================================================
    GLOBAL BASE (Mobile default for all pages)
@@ -43,6 +57,13 @@ body {
       font-family: "montserrat", sans-serif;
     }
 
+  main {
+      margin: 0 auto;
+      width: min(50em, 100%);
+      padding: .5em;
+      padding-top: 3em;
+    }
+
 
     /*===================================
     Layout switcher
@@ -53,7 +74,7 @@ body {
       margin-inline: auto;
       /* border: dotted yellow; */
       padding-inline: 1em;
-      padding: 2em 0;
+      padding: 3em 0;
     }
 
     .text-container {
@@ -69,12 +90,15 @@ body {
       justify-content: space-around;
     }
 
+    /*===================================
+    Section BG color
+    =========================== */
+
     .orange-bg {
       margin: 0 auto;
       background-color: #EF4B24;
       width: full-width;
       height: auto;
-      padding: 2em;
 
     }
     .white-bg {
@@ -205,6 +229,10 @@ body {
       transition: transform 0.3s, opacity 0.3s;
     }
 
+    /* Explicitly hide the menu toggle checkbox */
+    #menu-toggle {
+      display: none;
+    }
 
     /* Animate the three bars into an X */
     #menu-toggle:checked + .hamburger span:nth-child(1) {
@@ -239,7 +267,6 @@ body {
     h2 {
       font-family: "poppins", sans-serif;
       font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
-
     }
 
     h1 {
@@ -288,7 +315,7 @@ body {
       input,
       select,
       textarea {
-        font: inherit;
+      font: inherit;
     }
 
   /* Hero Section */
@@ -299,14 +326,13 @@ body {
       height: auto;
       align-items: center;
       justify-content: center;
-
     }
 
 
     .hero-text {
       display: flex;
       flex-direction: column;
-      width: 90%;
+      width: 60%;
     }
 
     .hero-description {
@@ -314,7 +340,7 @@ body {
     }
 
     .hero-img {
-      width: 250px;
+      width: 450px;
       height: auto;
     }
 
@@ -631,6 +657,27 @@ Mobile - Website Redesigning
   }
 
 
+
+/* =================================
+Mobile - Contact page
+====================================*/
+input, textarea {
+  width: 100%;
+  margin-top: 1em;
+  background-color: #dbdadf;
+  border: none;
+  padding: 1em;
+  font-family: inherit;
+  border-radius: .5em;
+  display: block;
+}
+
+textarea {
+  min-height: 200px;
+}
+
+
+
 /* =================================
 
   Home Desktop
@@ -711,7 +758,6 @@ Mobile - Website Redesigning
       display: flex;
       flex-direction: row;
       /* border: solid 1px skyblue; */
-      margin-bottom: 2em;
     }
 
     .two-column-div {
@@ -870,8 +916,6 @@ Desktop - Website Redesigning
       border: solid 1px rgb(255, 61, 0);
     }
 
-
-
   .card-flip .face-front img {
   max-height: none;
   }
@@ -880,6 +924,22 @@ Desktop - Website Redesigning
   width: 180px;
   max-width: 100%;
   height: auto;
+  }
+
+
+  /* =================================
+Desktop - Contact page
+====================================*/
+
+  input[type="text"],
+  input[type="email"] {
+    width: 45%;
+    padding: 1em;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
   }
 
 
