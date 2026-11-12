@@ -1,986 +1,254 @@
-:root {
-  /* Font */
-  font-family: "poppins", sans-serif;
-  font-family: "montserrat", sans-serif;
-
-  /* Color */
-  --color-primary: rgb(255, 61, 0);
-  --color-accent: #2B2D42; /* dark blue */
-  --color-accent: #FDF8E4; /* cream */
-  --color-accent: #FFE4CF; /* pale light orange */
-
-  color: #2962FF;
-  color: #EF4B24;
-
-  color: #F6F8E8;
-  color: #FDF4F2;
-  color: #F9F8F4;
-  color: #F8F6F0;
-  color: #e0e6e2;
-  color: black;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* Scales base text smoothly from 16px to 20px based on screen width */
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-
-  @view-transition {
-  navigation: auto;
-  }
-
-  ::view-transition-group(root) {
-    animation-duration: 1s;
-  }
-}
-
-h1 {
-  /* Scales large headings smoothly from 32px to 56px */
-  font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
-}
-
-/* ==========================================================================
-   GLOBAL BASE (Mobile default for all pages)
-   ========================================================================== */
-body {
-      margin: 0 auto;
-      padding: 0;
-      font-size: 1rem;
-      line-height: 1.3;
-      font-family: "montserrat", sans-serif;
-    }
-
-  main {
-      margin: 0 auto;
-      width: min(50em, 100%);
-      padding: .5em;
-      padding-top: 3em;
-    }
-
-
-    /*===================================
-    Layout switcher
-    =========================== */
-
-    .container {
-      width: 90vw;
-      margin-inline: auto;
-      /* border: dotted yellow; */
-      padding-inline: 1em;
-      padding: 3em 0;
-    }
-
-    .text-container {
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    }
-
-    .two-column-div {
-      display: flex;
-      gap: 1em;
-      border: solid blue;
-      justify-content: space-around;
-    }
-
-    /*===================================
-    Section BG color
-    =========================== */
-
-    .orange-bg {
-      margin: 0 auto;
-      background-color: #EF4B24;
-      width: full-width;
-      height: auto;
-
-    }
-    .white-bg {
-      margin: 0 auto;
-      background-color: white;
-      width: full-width;
-      height: auto;
-    }
-
-    .cream-bg {
-      margin: 0 auto;
-      background-color: #FDF8E4;
-      width: full-width;
-      height: auto;
-    }
-
-
-    /* #FDF8E4 */
-
-    .light-grey-bg {
-      margin: 0 auto;
-      background-color: #F3F2EF;
-      width: full-width;
-      height: auto;
-    }
-
-    .gradient-box {
-      background-image: linear-gradient(to right, #ffe8f1, #FFEAE2, #FFFFFF);
-      padding: 2em;
-    }
-
-
-  /*  ===============================
-      Navbar
-   =============================== */
-
-      #navbar {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      Z-index: 1000;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      align-items: center;
-      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-    }
-
-    #navbar.scrolled {
-      background-color: #ffffff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    #navbar .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 10px;
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-    }
-
-
-    .site-header {
-      display: flex;
-      justify-content: flex-end; /* pushes .menu to the far right */
-    }
-
-/* Menu links: hidden by default, revealed when checked */
-
-    .navlink {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: auto;
-      width: max-content;
-      display: flex;
-      flex-direction: column;
-      list-style-type: none;
-      align-items: stretch;
-      text-align: left;
-      justify-content: flex-end;
-      gap: 0;
-      margin: 0;
-      padding: 0;
-      max-height: 0;
-      font-family: "montserrat", sans-serif;
-      text-transform: uppercase;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-
-    .navlink a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-      padding: 0.75em 1.25em;
-      transition: background-color 0.3s ease;
-    }
-
-    .navlink a:hover {
-      background-color: #ff3d00;;
-      color: white;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 22px;
-      color: rgb(255, 61, 0);
-      cursor: pointer;
-      margin: 0;
-    }
-
-    .hamburger span {
-      height: 3px;
-      background: rgb(255, 61, 0);
-      border-radius: 2px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    /* Explicitly hide the menu toggle checkbox */
-    #menu-toggle {
-      display: none;
-    }
-
-    /* Animate the three bars into an X */
-    #menu-toggle:checked + .hamburger span:nth-child(1) {
-      transform: translateY(9.5px) rotate(45deg);
-    }
-    #menu-toggle:checked + .hamburger span:nth-child(2) {
-      opacity: 0;
-    }
-    #menu-toggle:checked + .hamburger span:nth-child(3) {
-      transform: translateY(-9.5px) rotate(-45deg);
-    }
-
-
-
-    #menu-toggle:checked ~ .navlink {
-      max-height: 200px;
-      background-color: white;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .links a {
-      display: block;
-      padding: 10px 0;
-      color: #222;
-      text-decoration: none;
-    }
-
-
-
-    /* Headings */
-    h1,
-    h2 {
-      font-family: "poppins", sans-serif;
-      font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
-    }
-
-    h1 {
-      margin: 0;
-      padding: 0;
-      color: white;
-      width: 100%;
-      text-transform: uppercase;
-      line-height: 1.3;
-      /* border: solid; */
-    }
-
-    h2 {
-      color: rgb(255, 61, 0);
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      line-height: 1.3;
-      margin-left: 0;
-    }
-
-    h2.white {
-      color: white;
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      line-height: 1.3;
-      margin: 0 auto;
-    }
-
-    p {
-      padding-bottom: 1em;
-      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-    }
-
-    p.white {
-      color: white;
-    }
-
-    p,
-    nav,
-    .footer-menu,
-    .stack-wrapper {
-      font-family: "montserrat", sans-serif;
-    }
-
-    button,
-      input,
-      select,
-      textarea {
-      font: inherit;
-    }
-
-  /* Hero Section */
-
-    .hero {
-      display: flex;
-      background-color: rgb(255, 61, 0);
-      height: auto;
-    }
-
-    .hero-container {
-      display: flex;
-      flex-direction: column;
-      /* border: solid 1px skyblue; */
-
-        @media (min-width: 768px) {
-          display: flex;
-          flex-direction: row;
-          gap: 1em;
-          padding-right: 0;
-          align-items: center;
-        }
-    }
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      width: 95%;
-      /* border: solid 1px skyblue; */
-
-
-      @media (min-width: 768px) {
-        .hero-text {
-        width: 60%;
-        /* border: solid 1px yellow; */
-        }
-      }
-    }
-
-    .hero-description {
-      color: white;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: auto;
-      max-width: 500px;
-      max-height: 415px;
-      /* border: solid 1px yellow; */
-    }
-
-    /* Service (What I do) */
-    .service {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-
-    .skill-tag {
-      display: flex;
-      flex-wrap: wrap;
-      align-self: flex-start;
-      height: auto;
-      list-style-type: none;
-      gap: 10px;
-    }
-
-    .skill-tag > button {
-      color: #EF4B24;
-      background-color: white;
-      border: solid 0.5px #EF4B24;
-      border-radius: 10px;
-      padding: 0.5em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .button-group {
-      /* border: solid 1px red; */
-      padding-left: 0;
-      display: flex;
-      font-size: inherit;
-    }
-
-
-    .skill-tag > button:hover,
-    .skill-tag > button.active {
-      background-color: #ff3d00;
-      color: white;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .skill-description {
-      padding-top: 1em;
-      /* border: solid 1px red; */
-    }
-
-    .bio {
-      display: flex;
-      flex-direction: column;
-      border: solid 1px rgb(255, 61, 0);
-      border-radius: 10px;
-      align-items: center;
-    }
-
-    .profile-img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .icon {
-      color: rgb(255, 61, 0);
-      justify-content: center;
-    }
-
-    .icon-white {
-      color: white;
-    }
-
-    .icon-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: start;;
-      gap: 0.5em;
-    }
-
-    .flex-container {
-      display: flex;
-      flex-direction: column;
-      height: auto;
-      gap: 1em;
-      padding: 1em;
-      border: solid 1px rgb(255, 61, 0);
-    }
-
-
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      list-style-type: none;
-      gap: 2.5em;
-    }
-
-    .stack-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5em;
-    }
-
-    .featured-work-section {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .featured-work-text {
-      margin: 0;
-      color: white;
-      display: flex;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-auto-rows: 1fr;
-      gap: 20px;
-      padding: 20px;
-      min-height: 22rem;
-    }
-
-    .featured-work-card {
-      margin: 0;
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #F9F8F4;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      padding: 1em;
-      gap: 0.5em;
-      perspective: 1000px
-    }
-
-    .featured-work-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .featured-work-card img {
-      width: 80%;
-
-    }
-
-    .featured-work-card h3 {
-      text-align: center;
-      color: rgb(255, 61, 0);
-    }
-
-    .featured-work-card-btn {
-      background-color: white;
-      color: rgb(255, 61, 0);
-      border: solid 0.5px rgb(255, 61, 0);
-      border-radius: 8px;
-      padding: 0.5em;
-      display: inline-block;
-      text-decoration: none;
-      color: rgb(255, 61, 0);
-    }
-
-    /* Card Flip*/
-
-    .card-flip {
-    perspective: 1000px;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    }
-
-    .inner {
-      display: grid;
-      width: 100%;
-      height: 100%;
-      flex: 1;
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
-
-    }
-
-    .card-flip:hover .inner {
-      transform: rotateY(180deg);
-    }
-
-    .face-front,
-    .face-back {
-      grid-area: 1 / 1;
-      width: 100%;
-      height: 100%;
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75em;
-      text-align: center;
-      border-radius: 15px;
-      padding: 2em;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .face-front {
-      background: #F9F8F4;
-    }
-
-    .face-front p,
-    .face-back p {
-      margin: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .face-front img {
-      height: auto;
-      object-fit: contain;
-    }
-
-    .face-back {
-      background: #293246;
-      color: white;
-      transform: rotateY(180deg);
-    }
-
-
-
-    .testimonial-card {
-      max-width: 50%;
-      border: solid 0.5px  #ff3d00;
-
-      padding: 1em;
-    }
-
-
-/*==================================
-
-  Bento grid
-
-=================================*/
-
-.grid {
-  display: grid;
-  gap: 24px;
-  grid-template-areas: "Gastronomy" "Outdoor" "Art" "Shopping";
-}
-
-.block1 {
-  grid-area: Gastrnomy;
-}
-
-.block2 {
-  grid-area: Outdoor;
-}
-
-.block3 {
-  grid-area: Art;
-}
-
-.block4 {
-  grid-area: Shopping;
-}
-
-
-
-    /* Footer */
-    .footer {
-      margin: 0 auto;
-      color: white;
-      height: auto;
-      padding: 2em;
-    }
-
-    .footer-menu {
-      display: flex;
-      list-style-type: none;
-      margin: 0.75em;
-      gap: 1em;
-    }
-
-
-
-/* =================================
-Mobile - Website Redesigning
-====================================*/
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
-
-  .vertical-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-  }
-
-  .orange-text {
-    color: #ff3d00;
-    font-weight: semi-bold;
-  }
-
-  .img-size {
-    width: 100%;
-    padding: 1.5em;
-  }
-
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
-
-
-
-/* =================================
-Mobile - Contact page
-====================================*/
-input, textarea {
-  width: 100%;
-  margin-top: 1em;
-  background-color: #dbdadf;
-  border: none;
-  padding: 1em;
-  font-family: inherit;
-  border-radius: .5em;
-  display: block;
-}
-
-textarea {
-  min-height: 200px;
-}
-
-
-
-/* =================================
-
-  Home Tablet
-
-====================================*/
-
-@media (min-width: 640px) {
-
-
-  .hero-text {
-      width: 50%;
-      }
-
-      .hero-img {
-        width: auto;
-        height: auto;
-      }
-  }
-
-
-/* =================================
-
-  Home Desktop
-
-====================================*/
-
-@media (min-width: 768px){
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-size: 1.25rem;
-      line-height: 1.5;
-      font-family: "montserrat", sans-serif;
-      font-size: 1rem;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin-inline: auto;
-      /* border: dotted yellow; */
-      padding-inline: 1em;
-    }
-
-    .flex-container {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .orange-bg {
-      margin: 0 auto;
-      background-color: rgb(255, 61, 0);
-      width: full-width;
-      height: auto;
-    }
-
-
-  /*===============================================
-    Nav Menu (Desktop)
-  =============================================*/
-
-    .hamburger {
-      display: none;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .menu {
-      flex-direction: row;
-    }
-
-    .navlink,
-    #menu-toggle:checked ~ .navlink {
-      position: static;
-      width: auto;
-      flex-direction: row;
-      align-items: center;
-      max-height: none;
-      overflow: visible;
-      margin: 0;
-      background: none;
-      box-shadow: none;
-    }
-
-    .navlink a {
-      padding: 1em 1.25em;
-    }
-
-
-    /* ==============================
-      Hero (Desktop)
-    ==============================*/
-
-
-    .two-column-div {
-      display: flex;
-      flex-direction: row;
-      gap: 2em;
-    }
-
-    .orange-text {
-      color: #ff3d00;
-      font-weight: bold;
-    }
-
-    .text-container {
-    display: flex;
-    flex-direction: row;
-    gap: 8em;
-    }
-
-
-    h1,
-    h2 {
-      font-family: "poppins", sans-serif;
-    }
-
-    h1 {
-      color: white;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-
-    h2 {
-      color: rgb(255, 61, 0);
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-
-    p,
-    nav,
-    .footer-menu,
-    .stack-wrapper {
-      font-family: "montserrat", sans-serif;
-    }
-
-    .hero {
-      display: flex;
-      background-color: rgb(255, 61, 0);
-      height: auto;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-
-    .hero-text {
-
-      max-width: 70%;
-
-    }
-
-      .flex-container {
-      display: flex;
-      flex-direction: column;
-      height: auto;
-      gap: 1em;
-      padding: 1em;
-      border: solid 1px rgb(255, 61, 0);
-    }
-
-
-    .profile-img {
-      /* border: solid pink; */
-    }
-
-
-
-    .skill {
-      width: fit-content;
-      background-color: white;
-      color: rgb(255, 61, 0);
-      border: solid 0.5px  rgb(255, 61, 0);
-      border-radius: 5px;
-      padding: 0.5em;
-    }
-
-
-    .service-heading {
-      font-size: 4rem;
-      line-height: 1.2;
-    }
-
-    .stack {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: start;
-      list-style-type: none;
-      gap: 2.5em;
-      /* border: solid #ff3d00; */
-    }
-
-    .stack-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5em;
-    }
-
-    .featured-work-section {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .featured-work-text {
-      margin: 0;
-      color: white;
-      display: flex;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 1fr;
-      gap: 20px;
-      padding: 20px;
-      min-height: 22rem;
-    }
-
-    /* Card Flip*/
-
-    /* Footer */
-    .footer {
-      margin: 0 auto;
-      color: white;
-      height: auto;
-      padding: 2em;
-    }
-
-    .footer-menu {
-      list-style-type: none;
-      margin: 0.75em;
-    }
-
-
-/* =================================
-Desktop - Website Redesigning
-====================================*/
-
-
-    .flex-container {
-      display: flex;
-      flex-direction: row;
-      height: auto;
-      gap: 3em;
-      padding: 2em;
-      border: solid 1px rgb(255, 61, 0);
-    }
-
-
-
-  .card-flip .face-front img {
-  max-height: none;
-  }
-
-  .card-large-icon .face-front img {
-  width: 180px;
-  max-width: 100%;
-  height: auto;
-  }
-
-
-  /* =================================
-Desktop - Contact page
-====================================*/
-
-  input[type="text"],
-  input[type="email"] {
-    width: 45%;
-    padding: 1em;
-  }
-
-  .contact {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Localization Expert</title>
+
+    <!-- Font -->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+ <!--   <header class="container"> -->
+
+  <!-- Header & Navbar -->
+  <header class="site-header" id="navbar">
+    <div class="container ">
+      <a href="/index.html"><img src="/images/logo.png"></a>
+
+      <nav class="menu">
+          <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+          <ul class="navlink">
+              <li><a href="pages/redesign-project.html">about</a></li>
+              <li><a href="pages/redesign-project.html">work</a></li>
+              <li><a href="pages/contact.html">contact</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-text vertical-stack">
+          <h1>Bridging the cultural gap at the intersection of
+             design, content and development</h1>
+
+          <p class="hero-description">
+            I am a Japanese localization expert, designer and frontend developer
+            who aims to create a great user experience and simplify the localization process along the way.
+          </p>
+        </div>
+        <img class="hero-img" src="/images/bridging-the-gap.png"/>
+      </div>
+    </section>
+
+    <!-- Why Localization -->
+    <section class="container">
+      <h2>Why Localization?</h2>
+        <p>
+          Localization is more about translating texts.
+          Being able to see the differences between cultures is important. I feel like I know this because when I came back to Japan after living in the U.S. for seven years in my 20s, I had a huge reverse culture shock. it was like my identity was split and was very hard to adjust back.
+
+          I was looking at things through a different lens. Although it’s been years since then, this lens hasn’t left me and I use it regularly.
+        </p>
+
+    </section>
+
+    <!-- Bio -->
+    <section class="white-bg">
+      <div class="container">
+        <div class="flex-container bio">
+          <img class="profile-img" src="/images/dd-profile.png" width="250px" height="250px">
+          <div class="vertical-stack">
+            <h2>About</h2>
+            <p>I am Takatomo and I am a UX writer, localization specialist, designer and frontend developer.
+              With over six years of experience as a localization specialist, I've written and translated website copy and content
+              for international brands that need presence in Japan.
+            </p>
+
+            <div class="icon-container">
+              <ul class="stack">
+                <li class="stack-item">
+                  <i class="devicon-html5-plain icon" style="font-size: 36px"></i>
+                  <span>HTML</span>
+                </li>
+
+                <li class="stack-item">
+                  <i class="devicon-css3-plain-wordmark icon" style="font-size: 36px"></i>
+                  <span>CSS</span>
+                </li>
+
+                <li class="stack-item">
+                  <i class="devicon-javascript-plain icon" style="font-size: 36px"></i>
+                  <span>JavaScript</span>
+                </li>
+
+                <li class="stack-item">
+                  <i class="devicon-react-original icon" style="font-size: 36px"></i>
+                  <span>React</span>
+                </li>
+
+                <li class="stack-item">
+                  <i class="devicon-figma-plain icon" style="font-size: 36px"></i>
+                  <span>Figma</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service -->
+<section >
+    <div class="container text-container">
+      <h2 class="service-heading">What I do</h2>
+
+  <div class="container">
+    <!-- Action Buttons -->
+    <div class="button-group skill-tag">
+      <button id="btnA">UX Writing</button>
+      <button id="btnB">Content Strategy</button>
+      <button id="btnC">Creative Translation</button>
+      <button id="btnD">UI Design</button>
+      <button id="btnE">Copywriting</button>
+    </div>
+
+    <!-- Dynamic Description Display Area -->
+
+      <p class="skill-description" id="descriptionDisplay">
+        The Japanese language has various layers of formalities and informalities
+        unlike English. Depending on the situations, you need to be formal, informal or somewhere between. Just translate English texts on the CTA button and you might see a funny face on Japanese users visiting your site.
+      </p>
+  </div>
+
+
+
+</div>
+</section>
+
+
+    <!-- Featured Work -->
+  <section class="orange-bg featured-work-section">
+      <div class="card-container container">
+        <h2 class="featured-work-text">Featured Work</h2>
+      </div>
+
+  <!-- Grid -->
+
+  <div class="card-grid container">
+        <!-- Card Flip-->
+        <!-- Card 1-->
+        <div class="featured-work-card card-flip card-large-icon">
+          <div class="inner">
+            <div class="face-front">
+              <h3>Website Redesign Project</h3>
+              <img src="/images/website-redesign.png">
+            </div>
+
+            <div class="face-back">
+              <p>
+                This is a website redesign project
+              </p>
+              <a href="" class="featured-work-card-btn">See Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2-->
+        <div class="featured-work-card card-flip card-large-icon">
+          <div class="inner">
+            <div class="face-front">
+              <h3>Japan Personal Tour Guide Website</h3>
+              <img src="/images/iso-japan-1-fuji-pagoda-500.png">
+            </div>
+
+            <div class="face-back">
+              <p>In this simple React App,
+                you can find recipe ideas based on the ingredients you have.
+              </p>
+              <a href="" class="featured-work-card-btn">See Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3-->
+        <div class="featured-work-card card-flip card-large-icon">
+          <div class="inner">
+            <div class="face-front">
+              <h3>Simple React App</h3>
+              <img src="/images/react.svg">
+            </div>
+
+            <div class="face-back">
+              <p>In this simple React App,
+                you can find recipe ideas based on the ingredients you have.
+              </p>
+              <a href="" class="featured-work-card-btn">See Details</a>
+            </div>
+          </div>
+        </div>
+
+
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="container">
+
+        <div class="flex-container bio">
+          <h2>Client Testimonial</h2>
+          <p>
+            Takatomo is incredibly knowledgeable of Japanese culture and all the language nuances, with a great attention to detail in all the translations he creates and proofreads. His deep understanding of SEO writing was a game changer for us and allowed us to achieve all our goals.If you want to succeed, you need Takatomo in your team!
+            <br><br>
+            <b><span style="color: rgb(255, 61, 0)">Sara Pereira Monteiro, SEO Sprcialist, Artlist.io</b>
+          </p>
+
+        </div>
+
+</section>
+
+
+    <!-- Footer -->
+    <section class="footer orange-bg">
+      <div class="container flex-container">
+        <a href="/index.html"><img src="/images/logo.png"></a>
+        <ul class="footer-menu">
+          <li>about</li>
+          <li>service</li>
+          <li>contact</li>
+          <li><a href="https://www.linkedin.com/in/takahom/" target="blank" rel="noreferrer"><i class="devicon-linkedin-plain icon icon-white" style="font-size: 28px"></a></i></li>
+        </ul>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
