@@ -115,9 +115,6 @@ body {
       height: auto;
     }
 
-
-    /* #FDF8E4 */
-
     .light-grey-bg {
       margin: 0 auto;
       background-color: #F3F2EF;
@@ -259,8 +256,6 @@ body {
       color: #222;
       text-decoration: none;
     }
-
-
 
     /* Headings */
     h1,
@@ -599,37 +594,6 @@ body {
       padding: 1em;
     }
 
-
-/*==================================
-
-  Bento grid
-
-=================================*/
-
-.grid {
-  display: grid;
-  gap: 24px;
-  grid-template-areas: "Gastronomy" "Outdoor" "Art" "Shopping";
-}
-
-.block1 {
-  grid-area: Gastrnomy;
-}
-
-.block2 {
-  grid-area: Outdoor;
-}
-
-.block3 {
-  grid-area: Art;
-}
-
-.block4 {
-  grid-area: Shopping;
-}
-
-
-
     /* Footer */
     .footer {
       margin: 0 auto;
@@ -953,8 +917,6 @@ Desktop - Website Redesigning
       padding: 2em;
       border: solid 1px rgb(255, 61, 0);
     }
-
-
 
   .card-flip .face-front img {
   max-height: none;
