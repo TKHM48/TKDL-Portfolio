@@ -580,9 +580,11 @@ body {
     }
 
     .face-back {
-      background: #293246;
+      background: #2B2D42;
+      background: linear-gradient(90deg, rgba(43, 45, 66, 1) 0%, rgba(28, 33, 128, 1) 50%, rgba(133, 141, 212, 1) 100%);
       color: white;
       transform: rotateY(180deg);
+
     }
 
 
@@ -917,6 +919,8 @@ Desktop - Website Redesigning
       padding: 2em;
       border: solid 1px rgb(255, 61, 0);
     }
+
+
 
   .card-flip .face-front img {
   max-height: none;
