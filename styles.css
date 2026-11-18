@@ -17,6 +17,7 @@
 
 
 
+
   color: #2962FF;
   color: #EF4B24;
 
@@ -375,6 +376,16 @@ textarea {
   /* border: solid 1px yellow; */
 }
 
+
+.gradient-btn {
+  background: linear-gradient(90deg, #FF6B2B 0%, #FF9142 100%);
+  color: white;
+  font-weight: semi-bold;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+}
+
 /* Service (What I do) */
 .service {
   display: flex;
@@ -615,6 +626,10 @@ textarea {
   height: auto;
   padding: 2em;
 }
+
+
+
+
 
 .footer-menu {
   display: flex;
