@@ -27,18 +27,27 @@
   </head>
 
 <body>
-   <!-- Navbar -->
-  <header id="navbar">
-    <div class="container">
-      <a href="/index.html"><img src="../images/logo.png"></a>
-      <ul class="navlink">
-            <li><a href="pages/about.html">about</a></li>
-            <li><li><a href="./pages/redesign-project.html">work</a></li>
-            <li><a href="#">contact</a></li>
-      </ul>
+   <!-- Header & Navbar -->
+  <header class="site-header" id="navbar">
+    <div class="container ">
+      <a href="/index.html"><img src="/images/logo.png"></a>
+
+      <nav class="menu">
+          <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+          <ul class="navlink">
+              <li><a href="pages/redesign-project.html">about</a></li>
+              <li><a href="pages/redesign-project.html">work</a></li>
+              <li><a href="pages/contact.html">contact</a></li>
+          </ul>
+      </nav>
     </div>
   </header>
-    <!-- </header> -->
 
     <!-- Hero -->
     <section class="hero">
@@ -50,16 +59,16 @@
             This is a website redesigning project where I aim to improve UX/UI and content.
           </p>
         </div>
-        <img src="../images/projects/redesign-white.png"/>
+        <img src="../images/website-redesign.png"/>
       </div>
     </section>
 
     <!-- Overview -->
       <div class="text-container container">
           <h2>Overview</h2>
-          <p>Get Your Guide is an online travel agency(OTA),
-            often called an aggregator site, lists thousands of tour packages,
-             hotel and transportation listings by private vendors from all over the world. The business model of this type of site is algorithms.
+          <p>Get Your Guide is an online travel agency(OTA) and
+             a travel agregator site, lists thousands of tour packages,
+             hotel and transportation listings by tour operators from all over the world. The business model of this type of site is algorithms.
           </p>
       </div>
 
@@ -148,14 +157,6 @@ Other popular western cities/countries include Los Angeles, Paris, Sydney, Londo
           </p>
       </div>
     </div>
-
-
-
-
-
-
-
-
 
 
 
